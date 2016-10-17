@@ -1,4 +1,4 @@
-// *Non-React Version
+/* *Non-React Version */
 
 // Main starting point for application --------------------------------
 
@@ -8,8 +8,12 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const router = require('./router');
+const mongoose = require('mongoose');
+
+// Database Setup------------------------------------------------------
 
 // Mongoose: "MongoDB object modeling tool designed to work in an asynchronous environment."
+mongoose.connect('mongodb://localhost:auth/auth');
 
 // App setup -----------------------------------------------------------
 
