@@ -9,7 +9,7 @@ const morgan = require('morgan');
 const app = express();
 const router = require('./router');
 
-
+// Mongoose: "MongoDB object modeling tool designed to work in an asynchronous environment."
 
 // App setup -----------------------------------------------------------
 
