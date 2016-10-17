@@ -1,4 +1,4 @@
-// *FOR NOW, THIS AUTHENTICATION VERSION IS NON-REACT
+// *Non-React Version
 
 // Main starting point for application --------------------------------
 
@@ -7,7 +7,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
-
+const router = require('./router');
 
 
 
@@ -15,8 +15,9 @@ const app = express();
 
 // morgan (debugging) - logging framework to log incoming requests
 app.use(morgan('combined'));
+// BodyParser makes it easy for our server to interpret data sent to it.
 app.use(bodyParser.json({ type: '*/*' }));
-
+router(app);
 
 
 
