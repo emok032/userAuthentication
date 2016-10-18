@@ -25,7 +25,7 @@ userSchema.pre('save', function(next) {
 			return next (err);
 		}
 
-		// hash (encrypt) our password using the salt
+		// hash password = salt + user password
 		bcrypt.hash(user.password, salt, null, function(err, hash) {
 			if (err) {
 				return next (err);
@@ -38,7 +38,6 @@ userSchema.pre('save', function(next) {
 });
 // Creating ('User') MODEL CLASS - Is a "class" of users
 const UserModelClass = mongoose.model('user', userSchema);
-
 
 // Exporting ('User') MODEL
 module.exports = UserModelClass;
