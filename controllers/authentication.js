@@ -29,7 +29,7 @@ exports.signup = function(req, res, next) {
 		if  (err) {
 			return next(err);
 		}
-
+		
 		// Action (-): If DUPLICATE exists, RETURN ERROR
 		if (existingUser) {
 			return res.status(422).send({ error: 'Email is in use' });

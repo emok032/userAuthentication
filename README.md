@@ -12,13 +12,14 @@ Exercising My User Authentication Muscles:
 	- bcrypt-nodejs: 0.0.3
 	- jwt-simple: 0.5.0
 
-- Testing: 
-	- Postman
- 	- Robomongo
+- Testing (back-end): 
+	- Postman (req, res)
+ 	- Robomongo (database)
 
 - To start: 
 	- Run "npm run dev"
 	- Run "mongod(.exe)" & "mongo(.exe)" (if Windows)
+
 - URL (tentative): Localhost://3000
 
 
