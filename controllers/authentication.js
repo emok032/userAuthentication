@@ -1,4 +1,14 @@
 const User = require('../models/user');
+const jwt = require('jwt-simple');
+const config = require('../config');
+
+function tokenUser(user) {
+	const timestamp = new Date().getTime();
+	return jwt.endcode({ sub: user.id, iat: timestamp }, config.secret);
+	// ^ jwt.encode({ [info to encode] }, [secret to encrypt with] );
+	// ^ (subject) property 'sub': what is token for?
+	// ^ 'iat' (Issued At Time)
+}
 
 exports.signup = function(req, res, next) {
 
