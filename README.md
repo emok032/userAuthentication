@@ -11,6 +11,8 @@ Exercising My User Authentication Muscles:
 	- nodemon: 1.11.0
 	- bcrypt-nodejs: 0.0.3
 	- jwt-simple: 0.5.0
+	- passport: 0.3.2
+    - passport-jwt: ^2.1.0
 
 - Testing (back-end): 
 	- Postman (req, res)
@@ -18,11 +20,9 @@ Exercising My User Authentication Muscles:
 
 - To start: 
 	- Run "npm run dev"
-	- Run "mongod(.exe)" & "mongo(.exe)" (if Windows)
+	- Run "mongod(.exe)" & "mongo(.exe)"
 
 - URL (tentative): Localhost://3000
-
-
 
 
 
