@@ -1,13 +1,17 @@
 const User = require('../models/user');
 const jwt = require('jwt-simple');
-const config = require('../config');
+const config = require('../config/config');
 
 function tokenUser(user) {
 	const timestamp = new Date().getTime();
-	return jwt.endcode({ sub: user.id, iat: timestamp }, config.secret);
-	// ^ jwt.encode({ [info to encode] }, [secret to encrypt with] );
-	// ^ (subject) property 'sub': what is token for?
-	// ^ 'iat' (Issued At Time)
+	return jwt.encode(
+		{
+		sub: user.id, 
+		iat: timestamp 
+		}, config.secret );
+	// jwt.encode({ [info to encode] }, config.[secret to encrypt with] );
+	// (subject) property 'sub': what is token for?
+	// (Issued At Time) 'iat': timestamp
 }
 
 exports.signup = function(req, res, next) {
@@ -29,7 +33,7 @@ exports.signup = function(req, res, next) {
 		// Action (-): If DUPLICATE exists, RETURN ERROR
 		if (existingUser) {
 			return res.status(422).send({ error: 'Email is in use' });
-			// (Error 422: Unprocessable Request)
+			// ^ (Error 422: Unprocessable Request)
 		}
 
 		// Action (+): If UNIQUE email entry, CREATE & SAVE new user record
@@ -46,7 +50,7 @@ exports.signup = function(req, res, next) {
 				return next(err);
 			}
 		// Response--> Request: Confirm User Created
-		res.json({ sucess: true });
+		res.json({ token: tokenUser(user) });
 		});
 
 	});
