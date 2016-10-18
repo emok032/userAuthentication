@@ -22,8 +22,6 @@ exports.signup = function(req, res, next) {
 			// (Error 422: Unprocessable Request)
 		}
 
-	
-
 		// Action (+): If UNIQUE email entry, CREATE & SAVE new user record
 		
 		// *ONLY CREATING User (not saved yet)
