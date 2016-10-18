@@ -9,7 +9,13 @@ const ExtractJwt = require('passoport-jwt').ExtractJwt;
 // (i.e. via JWT or username/password)
 
 //  SETTING UP options for JWT Strategy-------------------------------------------------------------------
-const jwtOptions = {};
+const jwtOptions = {
+	// Need to tell JwtStrategy where to look for that JWT Token (which can be stored anywhere on request)
+	// In this case, directing it to Header
+	jwtFromRequest: ExtractJwt.fromHeader('authorization');
+	// With JWT Strategy, need to provide it the secret
+	secretOrKey: config.secret
+};
 
 //  CREATING JWT Strategy---------------------------------------------------------------------------------
 // 	------(Decoded JWT Token) 'payload' - (see controllers/authentication.js)
@@ -35,3 +41,5 @@ const jwtLogin = new JwtStrategy(jwtOptions, function({payload, done) {
 		}
 	});
 });
+
+// Lastly, telling passport to use ^THIS strategy
