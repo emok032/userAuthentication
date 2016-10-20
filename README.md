@@ -1,6 +1,6 @@
 # userAuthentication
 
-Exercising My User Authentication Muscles:
+Exercising User Authentication Muscles w/ Notes
 
 - Database: MongoDB
 - NPM:

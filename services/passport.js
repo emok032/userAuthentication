@@ -16,6 +16,12 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
 	// Verify email/password - call DONE with User:
 	//		(+) Correct Match: Call done==> False
 	// 		(-) Incorrect Match: Call done==> True
+	User.findOne({ email: email }, function(err, user) {
+		if (err) { return done(err); }
+		if (!user) { return done(null, false); }
+
+		// Next: Need to Cross-reference password (see user model)
+	});
 });
 
 /* SIGN-UP/REGISTER */

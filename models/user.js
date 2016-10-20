@@ -36,6 +36,18 @@ userSchema.pre('save', function(next) {
 		});
 	});
 });
+
+/* Cross-reference password - (REQUEST) 'Password' VS. (STORE) USER.PASSWORD
+1. Create (NEW) [Salt + Hashed Password]: By Encrypting (sign-in) REQUEST 'Password' with Salt
+2. Compare STORED password with NEW REQUEST password */
+userSchema.methods.comparePassword = function(candidatePassword, callback) {
+	bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+									// this.password (hashed password as observed in model)
+		if (err) { return callback(err); }
+
+		callback(null, isMatch);
+	});
+}
 // Creating ('User') MODEL CLASS - Is a "class" of users
 const UserModelClass = mongoose.model('user', userSchema);
 
