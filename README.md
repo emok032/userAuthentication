@@ -15,7 +15,8 @@ So I've aggressively add notes on this after reviewing various documentation and
 	- bcrypt-nodejs: 0.0.3
 	- jwt-simple: 0.5.0
 	- passport: 0.3.2
-    - passport-jwt: ^2.1.0
+    - passport-jwt: 2.1.0
+    - passport-local: 1.0.0
 
 - Testing (back-end): 
 	- Postman (req, res)
