@@ -1,26 +1,37 @@
 // Set up JWT Strategy
 const passport = require('passport');
 const User = require('../models/user');
-const config = require('../config');
-const JwtStrategy = require('passport-jwt').Strategy;
-const ExtractJwt = require('passoport-jwt').ExtractJwt;
-
-// *Passport-Strategy(s): Method(s) for authenticating a user
+const config = require('../config/config');
+// Passport-Strategy(s): Method(s) for authenticating a user
 // (i.e. via JWT or username/password)
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
+const LocalStrategy = require('passport-local');
 
-//  SETTING UP options for JWT Strategy-------------------------------------------------------------------
+/* SIGN-IN */
+// 	CREATING LOCAL Strategy: Verifying E-Mail and Password------------------------------------------------
+// 		Need to tell this Local Strategy where to look for request (for email/password) */
+const localOptions = { usernameField: 'email' };
+const localLogin = new LocalStrategy(localOptions, function(email, password, done) {
+	// Verify email/password - call DONE with User:
+	//		(+) Correct Match: Call done==> False
+	// 		(-) Incorrect Match: Call done==> True
+});
+
+/* SIGN-UP/REGISTER */
+//	SETTING UP options for JWT Strategy-------------------------------------------------------------------
 const jwtOptions = {
 	// Need to tell JwtStrategy where to look for that JWT Token (which can be stored anywhere on request)
 	// In this case, directing it to Header
-	jwtFromRequest: ExtractJwt.fromHeader('authorization');
+	jwtFromRequest: ExtractJwt.fromHeader('authorization'),
 	// With JWT Strategy, need to provide it the secret
 	secretOrKey: config.secret
 };
 
 //  CREATING JWT Strategy---------------------------------------------------------------------------------
-// 	------(Decoded JWT Token) 'payload' - (see controllers/authentication.js)
-const jwtLogin = new JwtStrategy(jwtOptions, function({payload, done) {
-	// See if user ID IN PAYLOAD exist in DB--------------------------------------------------------------
+// 		(Decoded JWT Token) 'payload' - (see controllers/authentication.js)
+const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
+	// See if user ID IN PAYLOAD exist in DB
 	// 		(+): call 'done' WITH a user object
 	// 		(-): call 'done' WITHOUT a user object
 	User.findById(payload.sub, function(err, user) {
@@ -43,3 +54,4 @@ const jwtLogin = new JwtStrategy(jwtOptions, function({payload, done) {
 });
 
 // Lastly, telling passport to use ^THIS strategy
+passport.use(jwtLogin);

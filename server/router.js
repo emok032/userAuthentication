@@ -1,11 +1,14 @@
 const Authentication = require('../controllers/authentication');
+const passportService = require('../services/passport');
+const passport = require('passport');
+
+const requireAuth = passport.authenticate('jwt', { session: false });
 
 module.exports = function(app) {
-
-// request: incoming
-// response: outgoing (what handle in response to user request)
-// next: for error handling
-
-	// function: Authentication (see controller)
+	// Setting Route Handler to handle .GET request to root ('/')
+	// Any incoming request must pass through requireAuth to continue
+	app.get('/', requireAuth, function(req, res) {
+		res.send({ User: 'Successfully Authenticated for Root Route' });
+	});
 	app.post('/signup', Authentication.signup);
 }
