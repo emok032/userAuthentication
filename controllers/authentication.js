@@ -14,6 +14,11 @@ function tokenUser(user) {
 	// (Issued At Time) 'iat': timestamp
 }
 
+exports.signin = function(req, res, next) {
+	// Since User is now registered
+	// -	(email and password authenticated with unique JWT Token received)
+	// -	We just need to give them a token
+}
 exports.signup = function(req, res, next) {
 
 	console.log(req.body);

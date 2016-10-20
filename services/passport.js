@@ -20,7 +20,18 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
 		if (err) { return done(err); }
 		if (!user) { return done(null, false); }
 
-		// Next: Need to Cross-reference password (see user model)
+		// Next: Need to Cross-reference password (see user model first)
+		// After user model method defined - bring in isMatch
+		user.comparePassword(password, function(err, isMatch) {
+			// Error: Return early, call done
+			if (err) { return  done(err); }
+			// If search process 'successful' but without match (false)
+			if (!isMatch) { return done(null, false)};
+
+			// If match found
+			return done(null, user);
+
+		});
 	});
 });
 
@@ -59,5 +70,8 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
 	});
 });
 
-// Lastly, telling passport to use ^THIS strategy
+// Lastly, telling passport to use the ABOVE strategies-----------------------------------------------------
+// For SIGN-UP
 passport.use(jwtLogin);
+// For SIGN-IN
+passport.use(localLogin);
