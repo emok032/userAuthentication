@@ -10,8 +10,8 @@ function tokenUser(user) {
 		iat: timestamp 
 		}, config.secret );
 	// jwt.encode({ [info to encode] }, config.[secret to encrypt with] );
-	// (subject) property 'sub': what is token for?
-	// (Issued At Time) 'iat': timestamp
+	// -	Property (Subject) 'sub': what is token for?
+	// -	Property (Issued At Time) 'iat': timestamp
 }
 
 exports.signin = function(req, res, next) {
@@ -20,7 +20,6 @@ exports.signin = function(req, res, next) {
 	// -	We just need to give them a token
 }
 exports.signup = function(req, res, next) {
-
 	console.log(req.body);
 	const email = req.body.email;
 	const password = req.body.password;
@@ -29,7 +28,7 @@ exports.signup = function(req, res, next) {
 		return res.status(422).send({ error: 'Please provide both an email and password.'});
 	}
 	// Verify: email is unique in database
-	// Search for email--> Invoke a Callback to be passed (err, existingUser) 
+	// -	Search for email--> Invoke a Callback to be passed (err, existingUser) 
 	User.findOne({ email: email }, function(err, existingUser) {
 		if  (err) {
 			return next(err);
