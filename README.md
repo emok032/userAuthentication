@@ -1,6 +1,9 @@
 # userAuthentication
 
-Exercising User Authentication Muscles w/ Notes
+Exercising User Authentication Muscles w/ Notes:
+-	WIP but works
+-	I'm particularly happy with this.  One of my personal takeaways this is that constantly return and commenting on old code helps me learn the material better.  Not just commenting as I go.
+So I've aggressively add notes on this after reviewing various documentation and tutorials online.  Can't take 100% for learning new things, can you? So my notes are regurgitations of what I've learned.
 
 - Database: MongoDB
 - NPM:

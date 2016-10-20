@@ -8,9 +8,9 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
 
-/* SIGN-IN */
+/* 	SIGN-IN  */
 // 	CREATING LOCAL Strategy: Verifying E-Mail and Password------------------------------------------------
-// 		Need to tell this Local Strategy where to look for request (for email/password) */
+//	-	Need to tell this Local Strategy where to look for request (for email/password) */
 const localOptions = { usernameField: 'email' };
 const localLogin = new LocalStrategy(localOptions, function(email, password, done) {
 	// Verify email/password - call DONE with User:
@@ -21,7 +21,7 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
 		if (!user) { return done(null, false); }
 
 		// Next: Need to Cross-reference password (see user model first)
-		// After user model method defined - bring in isMatch
+		// - 	After user model method defined - bring in isMatch
 		user.comparePassword(password, function(err, isMatch) {
 			// Error: Return early, call done
 			if (err) { return  done(err); }
@@ -35,7 +35,7 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
 	});
 });
 
-/* SIGN-UP/REGISTER */
+/* 	SIGN-UP/REGISTER  */
 //	SETTING UP options for JWT Strategy-------------------------------------------------------------------
 const jwtOptions = {
 	// Need to tell JwtStrategy where to look for that JWT Token (which can be stored anywhere on request)
@@ -46,7 +46,7 @@ const jwtOptions = {
 };
 
 //  CREATING JWT Strategy---------------------------------------------------------------------------------
-// 		(Decoded JWT Token) 'payload' - (see controllers/authentication.js)
+// 	(Decoded JWT Token) 'payload' - (see controllers/authentication.js)
 const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
 	// See if user ID IN PAYLOAD exist in DB
 	// 		(+): call 'done' WITH a user object

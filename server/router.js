@@ -11,7 +11,11 @@ module.exports = function(app) {
 	app.get('/', requireAuth, function(req, res) {
 		res.send({ User: 'Successfully Authenticated for Root Route' });
 	});
-	app.post('/signin', requireSignin, Authentication.signin);
 
+	// Adding (middleware): 'requireSignin'
+	// -	Prevent User(s) from accessing '/signin' route (see user model)
+	app.post('/signin', requireSignin, Authentication.signin);
+	// Where User(s) register with unique email/password
+	// -	Receive unique JWT Token in return
 	app.post('/signup', Authentication.signup);
 }
