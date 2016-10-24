@@ -13,9 +13,10 @@ const LocalStrategy = require('passport-local');
 //	-	Need to tell this Local Strategy where to look for request (for email/password) */
 const localOptions = { usernameField: 'email' };
 const localLogin = new LocalStrategy(localOptions, function(email, password, done) {
-	// Verify email/password - call DONE with User:
-	//		(+) Correct Match: Call done==> False
-	// 		(-) Incorrect Match: Call done==> True
+	/* Verify email/password - call DONE with User:
+			(+) Correct Match: Call done==> False
+			(-) Incorrect Match: Call done==> True
+			'done' is supplied by Passport.js 		*/
 	User.findOne({ email: email }, function(err, user) {
 		if (err) { return done(err); }
 		if (!user) { return done(null, false); }

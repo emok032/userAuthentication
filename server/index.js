@@ -23,8 +23,6 @@ app.use(morgan('combined'));
 app.use(bodyParser.json({ type: '*/*' }));
 router(app);
 
-
-
 // Server setup --------------------------------------------------------
 
 // if environment variable for PORT use it, otherwise use 3000:
