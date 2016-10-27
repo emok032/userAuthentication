@@ -4,9 +4,8 @@ Exercising User Authentication Muscles w/ Notes:
 -	Back-end working
 -	Next, client-side authentication
 -	This my 'practice'-plate for future projects!
--	It was actually nice learning this.  One of my personal takeaways this is that constantly return and commenting on old code helps me learn the material better.  Not just commenting as I go.
-So I've aggressively add notes on this after reviewing various documentation and tutorials online.  I can't take 100% credit for learning such things.  I'm glad there are so many resources and community-minded people to help someone like me.  So, my notes are information I've processed of from the web and other tutorial leaders.
--	Helpful Tip: I'd recommend drawing diagrams while watching other tutorials.  That helped me on a conceptual level.
+-	It was actually nice learning this.  One of my personal takeaways from this is that consistent commenting on old code helps to learn the material better.  Not just commenting as I go.  So, I've aggressively added notes on this one after reviewing various documentation and tutorials online.  I can't take 100% credit for learning such things.  I'm glad there are opportunities and resources to take advantage of from such community-minded people.  So, my notes are info I've processed from the web and other community leaders.
+-	Helpful Tip: I'd recommend drawing diagrams while watching other tutorials.  That always helps me on a conceptual level.
 
 - Database: MongoDB
 - NPM:
