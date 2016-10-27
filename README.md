@@ -5,7 +5,7 @@ Exercising User Authentication Muscles w/ Notes:
 -	Next, client-side authentication
 -	This my 'practice'-plate for future projects! Never realized how many applications benefit from general user authentication.  So, I'm taking it upon myself to become a "pro" at user authentication starting with MongoDB.
 -	It was pretty awesome learning this.  One of my personal takeaways from this is that consistent commenting on old code helps to learn the material better.  Not just commenting as I go but consistently comment after the fact.
--	I've aggressively added notes on this one after reviewing various documentation and tutorials online.  I can't take 100% credit for learning such things.  I'm glad there are opportunities and resources to take advantage of provided by such community-minded people.  So, my notes are info I've comprehended and re-processed from the web and other community leaders.
+-	I've aggressively added notes on this one after reviewing various documentation and tutorials online.  I can't take 100% credit for learning such things.  I'm glad there are opportunities and resources to take advantage of provided by such community-minded people.  So, my notes are info I've comprehended and re-processed from the web and other community leaders (Special shoutout to Stephen Grider for his very helpful lesson).
 -	Helpful Tip: I'd recommend drawing diagrams while watching other tutorials.  That always helps me on a conceptual level.
 
 - Database: MongoDB
