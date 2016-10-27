@@ -30,7 +30,8 @@ Exercising User Authentication Muscles w/ Notes:
 
 - URL (tentative): Localhost://3000
 
-- What's next in my User Authentication quest? ReactJS + MongoDB app.
-
+- What's next in my User Authentication quest? *ReactJS + MongoDB*
+	- See "Bubo" App for ReactJS + MySQL/Sequelize
+	- It was a collaboration ahievement, which I'm really proud of - We'll be adding more features to it in the near future.
 
 
