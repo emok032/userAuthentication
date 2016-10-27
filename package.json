@@ -9,16 +9,38 @@
   },
   "author": "Eric",
   "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "chai": "^3.5.0",
+    "chai-jquery": "^2.0.0",
+    "jquery": "^2.2.1",
+    "jsdom": "^8.1.0",
+    "mocha": "^2.4.5",
+    "react-addons-test-utils": "^0.14.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "jwt-simple": "^0.5.0",
-    "mongoose": "^4.6.4",
+    "mongoose": "^4.6.5",
     "morgan": "^1.7.0",
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-jwt": "^2.1.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react-router": "^2.8.1",
+    "babel-preset-stage-1": "^6.1.18",
+    "lodash": "^3.10.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.0.1",
+    "redux": "^3.0.4"
   }
 }

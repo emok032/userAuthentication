@@ -14,7 +14,6 @@ function tokenUser(user) {
 	-	Property (Issued At Time) 'iat': timestamp */
 }
 
-
 exports.signin = function(req, res, next) {
 	/* Since User is now registered
 	-	(email and password authenticated with unique JWT Token received)
