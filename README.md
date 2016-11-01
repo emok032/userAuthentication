@@ -1,7 +1,7 @@
 # userAuthentication
 
 Exercising User Authentication Muscles w/ Notes:
--	Back-end working
+-	Back-end (For Login & Registration) is working successfully [using Postman]
 -	Next, client-side authentication
 -	This my 'practice'-plate for future projects! Never realized how many applications benefit from general user authentication.  So, I'm taking it upon myself to become a "pro" at user authentication starting with MongoDB.
 -	It was pretty awesome learning this.  One of my personal takeaways from this is that consistent commenting on old code helps to learn the material better.  Not just commenting as I go but consistently comment after the fact.

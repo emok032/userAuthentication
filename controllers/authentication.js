@@ -8,14 +8,14 @@ function tokenUser(user) {
 		{
 		sub: user.id, 
 		iat: timestamp 
-		}, config.secret );
-	/* jwt.encode({ [info to encode] }, config.[secret to encrypt with] );
+		}, config.secret ); /* 
+	jwt.encode({ [info to encode] }, config.[secret to encrypt with] );
 	-	Property (Subject) 'sub': what is token for?
 	-	Property (Issued At Time) 'iat': timestamp */
 }
 
-exports.signin = function(req, res, next) {
-	/* Since User is now registered
+exports.signin = function(req, res, next) {	/*
+	Since User is now registered
 	-	(email and password authenticated with unique JWT Token received)
 	-	We just need to give them a token */
 	res.send({ token: tokenUser(req.user) });

@@ -10,6 +10,7 @@ module.exports = function(app) {
 	// Any incoming request must pass through requireAuth to continue
 	app.get('/', requireAuth, function(req, res) {
 		res.send({ User: 'Successfully Authenticated for Root Route' });
+		res.sendFile('src')
 	});
 
 	// Adding (middleware): 'requireSignin'
