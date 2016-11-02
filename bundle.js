@@ -28447,17 +28447,22 @@
 				    password = _ref.password;
 
 				console.log(email, password);
-				//  Handles sign-in form; Binded to event listener, onSubmit in <form>;
+				//  Helper function: Handled by handleSubmit()
+				// handleSubmit(): Handles sign-in form; Binded to event listener, onSubmit in <form>;
 			}
 		}, {
 			key: 'render',
 			value: function render() {
+				/*
+	   ReduxForm provides:
+	   handleSubmit and fields: email, password */
 				var _props = this.props,
 				    handleSubmit = _props.handleSubmit,
 				    _props$fields = _props.fields,
 				    email = _props$fields.email,
 				    password = _props$fields.password;
 
+				// Below <input> will each take the email and password helpers respectively
 
 				return _react2.default.createElement(
 					'form',

@@ -25,8 +25,7 @@ Exercising User Authentication Muscles w/ Notes:
 	- Postman (req, res)
  	- Robomongo (database)
 
-- To start: 
-	- Run "npm run dev"
+- Testing back-end (with Postman): "nodemon server/index.js"
 	- Run "mongod(.exe)" & "mongo(.exe)"
 
 - URL (tentative): Localhost://3000
