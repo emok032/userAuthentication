@@ -1,3 +1,4 @@
+// App (Main Parent Component)
 import React from 'react';
 import { Component } from 'react';
 

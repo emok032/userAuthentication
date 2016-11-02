@@ -1,3 +1,4 @@
+// Header with Sign-In form
 import React, { Component } from 'react';
 
 export default class Header extends Component {
