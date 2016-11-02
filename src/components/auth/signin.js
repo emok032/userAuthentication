@@ -4,7 +4,7 @@ import { reduxForm } from 'redux-form';
 class Signin extends Component {
 		handleFormSubmit({ email, password }) {
 			console.log(email, password);
-			//  Handles sign-in form; Binded to event listner, onSubmit in form
+			//  Handles sign-in form; Binded to event listener, onSubmit in <form>;
 		}
 
 	render() {
@@ -22,7 +22,7 @@ class Signin extends Component {
 			</fieldset>
 			<button action="submit" className="btn btn-primary">Sign in</button>
 		</form>
-		)
+		);
 	}
 }
 
