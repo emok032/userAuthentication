@@ -1,7 +1,7 @@
 // Set up JWT Strategy
 const passport = require('passport');
 const User = require('../models/user');
-const config = require('../config/config');
+const config = require('../src/config');
 // Passport-Strategy(s): Method(s) for authenticating a user
 // (i.e. via JWT or username/password)
 const JwtStrategy = require('passport-jwt').Strategy;

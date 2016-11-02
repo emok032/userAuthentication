@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const jwt = require('jwt-simple');
-const config = require('../config/config');
+const config = require('../src/config');
 
 function tokenUser(user) {
 	const timestamp = new Date().getTime();
@@ -8,7 +8,7 @@ function tokenUser(user) {
 		{
 		sub: user.id, 
 		iat: timestamp 
-		}, config.secret ); /* 
+		}, config.secret ); /*  d
 	jwt.encode({ [info to encode] }, config.[secret to encrypt with] );
 	-	Property (Subject) 'sub': what is token for?
 	-	Property (Issued At Time) 'iat': timestamp */
