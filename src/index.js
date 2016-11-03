@@ -18,4 +18,4 @@ ReactDOM.render(
     	</Route>
     	</Router>
   </Provider>
-  , document.getElementById('container'));
+  , document.querySelector('.container'));

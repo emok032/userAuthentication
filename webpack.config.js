@@ -9,15 +9,11 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['react', 'stage-1']
+        presets: ['react', 'es2015', 'stage-1']
       }
-    },
-    {
-      test: /\.js$/, exclude: /node_modules/, loader: 'babel?presets[]=es2015'
     }]
   },
   resolve: {
